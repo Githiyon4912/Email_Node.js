@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
@@ -43,4 +44,4 @@ app.post("/send-mail", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => console.log(`The server started on port: ${PORT} ✨`));
